@@ -1,0 +1,69 @@
+# Choreo 组件配置文件
+schemaVersion: 1.2
+
+# 端点配置
+endpoints:
+  # 主服务端点
+  - name: nodejs-argo-service
+    displayName: Node.js Argo Service
+    service:
+      basePath: /
+      port: 3000
+    type: REST
+    networkVisibilities:
+      - Public
+    # 如果有 OpenAPI 规范文件，可以指定路径
+    # schemaFilePath: openapi.yaml
+
+# 运行时配置（环境变量）
+configurations:
+  env:
+    # 从配置表单获取的环境变量
+    - name: UUID
+      valueFrom:
+        configForm:
+          displayName: UUID
+          required: false
+          type: string
+    
+    - name: ARGO_DOMAIN
+      valueFrom:
+        configForm:
+          displayName: Argo Domain
+          required: false
+          type: string
+    
+    - name: ARGO_AUTH
+      valueFrom:
+        configForm:
+          displayName: Argo Auth Token
+          required: false
+          type: secret
+    
+    - name: ARGO_PORT
+      valueFrom:
+        configForm:
+          displayName: Argo Port
+          required: false
+          type: number
+    
+    - name: UPLOAD_URL
+      valueFrom:
+        configForm:
+          displayName: Upload URL
+          required: false
+          type: string
+    
+    - name: PROJECT_URL
+      valueFrom:
+        configForm:
+          displayName: Project URL
+          required: false
+          type: string
+    
+    - name: AUTO_ACCESS
+      valueFrom:
+        configForm:
+          displayName: Auto Access
+          required: false
+          type: string
