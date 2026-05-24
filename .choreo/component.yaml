@@ -5,8 +5,9 @@ schemaVersion: 1.2
 endpoints:
   - name: my-sub-service
     displayName: Subscription Service
-    basePath: /
-    port: 8080                 # 👈 告诉 Choreo，你的应用在 8080 端口运行
-    type: REST                 # 流量类型
-    networkVisibilities:
-      - Public                 # 允许公网公开访问
+    service:                     # 👈 关键：必须添加这一层级，且下方属性缩进 2 个空格
+      basePath: /
+      port: 8080
+      type: REST
+      networkVisibilities:
+        - Public
