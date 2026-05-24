@@ -1,0 +1,12 @@
+# 配置文件版本号
+schemaVersion: 1.2
+
+# 定义你的服务暴露接口
+endpoints:
+  - name: my-sub-service
+    displayName: Subscription Service
+    basePath: /
+    port: 8080                 # 👈 告诉 Choreo，你的应用在 8080 端口运行
+    type: REST                 # 流量类型
+    networkVisibilities:
+      - Public                 # 允许公网公开访问
