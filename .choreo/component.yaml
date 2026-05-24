@@ -7,7 +7,7 @@ endpoints:
     displayName: Node.js Argo Service
     service:
       basePath: /
-      port: 3000
+      port: 8080
     type: REST
     networkVisibilities:
       - Public
