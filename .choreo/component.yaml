@@ -3,8 +3,7 @@ schemaVersion: 1.2
 
 # 端点配置
 endpoints:
-  # 主服务端点
-  - name: nodejs-argo-service
+  - name: nodejs-argo
     displayName: Node.js Argo Service
     service:
       basePath: /
@@ -12,8 +11,9 @@ endpoints:
     type: REST
     networkVisibilities:
       - Public
-    # 如果有 OpenAPI 规范文件，可以指定路径
-    # schemaFilePath: openapi.yaml
+    # 禁用认证，允许公开访问
+    authentication:
+      enabled: false
 
 # 运行时配置（环境变量）
 configurations:
