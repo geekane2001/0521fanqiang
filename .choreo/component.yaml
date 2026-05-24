@@ -1,13 +1,12 @@
-# 配置文件版本号
 schemaVersion: 1.2
 
-# 定义你的服务暴露接口
 endpoints:
-  - name: my-sub-service
-    displayName: Subscription Service
-    service:                     # 👈 关键：必须添加这一层级，且下方属性缩进 2 个空格
+  - name: nodejs-argo
+    service:
       basePath: /
       port: 8080
-      type: REST
-      networkVisibilities:
-        - Public
+    type: REST
+    networkVisibilities:
+      - Public
+    authentication:
+      enabled: false
